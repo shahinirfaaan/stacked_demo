@@ -1,25 +1,25 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
-// **************************************************************************
-// StackedNavigatorGenerator
-// **************************************************************************
-
-// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i4;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
+import 'package:stacked_app/app/app.router.dart';
 import 'package:stacked_app/ui/views/home/home_view.dart' as _i2;
-import 'package:stacked_app/ui/views/startup/startup_view.dart' as _i3;
+import 'package:stacked_app/ui/views/splash_screen/splash_view.dart' as _i3;
 import 'package:stacked_services/stacked_services.dart' as _i5;
+
+import 'app.router.dart';
+
 
 class Routes {
   static const homeView = '/home-view';
 
-  static const startupView = '/startup-view';
+  static const splashView = '/splash-view';
+
+  static const loginView = '/login-view';
 
   static const all = <String>{
     homeView,
-    startupView,
+    splashView,
+    loginView,
   };
 }
 
@@ -30,9 +30,11 @@ class StackedRouter extends _i1.RouterBase {
       page: _i2.HomeView,
     ),
     _i1.RouteDef(
-      Routes.startupView,
-      page: _i3.StartupView,
+      Routes.splashView,
+      page: _i3.SplashView,
     ),
+    
+    
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -42,9 +44,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i3.StartupView: (data) {
+    _i3.SplashView: (data) {
       return _i4.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i3.StartupView(),
+        builder: (context) => const _i3.SplashView(),
         settings: data,
       );
     },
@@ -71,21 +73,21 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToStartupView([
+  Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.startupView,
+    return navigateTo<dynamic>(Routes.splashView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomeView([
+  Future<dynamic> replaceWithLoginPage([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -99,14 +101,14 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithStartupView([
+  Future<dynamic> replaceWithSplashView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.startupView,
+    return replaceWith<dynamic>(Routes.splashView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
